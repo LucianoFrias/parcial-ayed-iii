@@ -16,9 +16,10 @@ class Ficha
 
     public:
 
-    Ficha()
+    Ficha(Empleado empleado, std::string nameEmpresa)
     {
-        
+        this->empleado = empleado;
+        this->nameEmpresa = nameEmpresa;
     }
 
     void setEmpleado(Empleado& empleado)

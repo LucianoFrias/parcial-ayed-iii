@@ -4,17 +4,13 @@
 int main()
 {
     Empresa empresa;
-    Empleado empleado;
+    Empleado empleado("Luciano", "Frias");
+    Empleado empleado2("Ricardo", "Gutierrez");
 
-    empleado.setName("Luciano");
-    empleado.setSurname("Frias");
+    Ficha ficha(empleado, "TESTING");
 
-    Ficha ficha;
-    ficha.setEmpleado(empleado);
-    ficha.setNameEmpresa("TESTING");
-
-    empresa.useFichaManager().createFicha();
-    empresa.useFichaManager().loadFicha(ficha);
+    empresa.useFichaManager().createFicha(empleado, "TESTING");
+    empresa.useFichaManager().createFicha(empleado2, "TESTING 2");
 
     empresa.useFichaManager().showFichas();
 

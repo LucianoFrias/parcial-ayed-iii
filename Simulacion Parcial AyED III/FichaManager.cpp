@@ -8,9 +8,10 @@ class FichaManager
     std::stack<Ficha> fichas;
 
     public:
-    void createFicha()
+    void createFicha(Empleado empleado, std::string nameEmpresa)
     {
-        std::cout << "Ficha created" << std::endl;
+        Ficha newFicha(empleado, nameEmpresa);
+        loadFicha(newFicha);
     }
 
     Ficha getFicha(std::string surname)
