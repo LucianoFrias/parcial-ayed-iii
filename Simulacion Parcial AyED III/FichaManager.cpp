@@ -11,7 +11,7 @@ class FichaManager
     void createFicha(Empleado empleado, std::string nameEmpresa)
     {
         Ficha newFicha(empleado, nameEmpresa);
-        loadFicha(newFicha);
+        this->fichas.push(newFicha);
     }
 
     Ficha getFicha(std::string surname)
@@ -19,10 +19,6 @@ class FichaManager
        
     }
 
-    void loadFicha(Ficha& ficha)
-    {
-        this->fichas.push(ficha);
-    }
 
     void showFichas()
     {
@@ -32,8 +28,11 @@ class FichaManager
         {
             std::cout << tempFichas.top().getEmpleado().getName() << std::endl;
             std::cout << tempFichas.top().getEmpleado().getSurname() << std::endl;
+            std::cout << tempFichas.top().getNameEmpresa() << std::endl;
+            std::cout << "" << std::endl;
             tempFichas.pop();
         }
+        
     }
 
 };

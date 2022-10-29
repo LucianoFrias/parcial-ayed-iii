@@ -6,23 +6,45 @@ class Empresa
 {
     private:
     std::queue<Empleado> empleados;
-    FichaManager fichaManager;
+    FichaManager* fichaManager;
 
     public:
 
-    Empresa(){};
+    Empresa(){
+        fichaManager = new FichaManager();
+    };
 
     void atenderEmpleados()
     {
         
     };
 
-    void addEmpleado(Empleado& empleado)
+    Empleado addEmpleado(std::string name, std::string surname)
     {
+        Empleado empleado(name, surname);
         empleados.push(empleado);
+
+        return empleado;
     }
 
-    FichaManager useFichaManager()
+    void showEmpleados()
+    {
+        std::queue<Empleado> tempEmpleados = empleados;
+
+        while(!tempEmpleados.empty())
+        {
+            std::cout << tempEmpleados.front().getName() << std::endl;
+            std::cout << tempEmpleados.front().getSurname() << std::endl;
+            std::cout << "" << std::endl;
+            tempEmpleados.pop();
+        }
+        
+    }
+
+
+    // MANAGERS
+
+    FichaManager* useFichaManager()
     {
         return fichaManager;
     }

@@ -4,15 +4,15 @@
 int main()
 {
     Empresa empresa;
-    Empleado empleado("Luciano", "Frias");
-    Empleado empleado2("Ricardo", "Gutierrez");
 
-    Ficha ficha(empleado, "TESTING");
+    Empleado empleado = empresa.addEmpleado("Luciano", "Frias");
+    Empleado empleado2 = empresa.addEmpleado("Ricardo", "Gutierrez");
 
-    empresa.useFichaManager().createFicha(empleado, "TESTING");
-    empresa.useFichaManager().createFicha(empleado2, "TESTING 2");
 
-    empresa.useFichaManager().showFichas();
+    empresa.useFichaManager()->createFicha(empleado, "TESTING");
+    empresa.useFichaManager()->createFicha(empleado2, "TESTING 2");
 
-    getchar();
+    
+    empresa.useFichaManager()->showFichas();
+
 }
